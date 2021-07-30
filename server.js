@@ -15,7 +15,7 @@ const controllers = require("./controller");
 app.set("view engine", "ejs");
 
 // Mongodb connecton
-
+app.use("./config/db.connection.js");
 
 // Logger middleware
 module.exports = function logger(req, res, next) {
