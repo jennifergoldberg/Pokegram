@@ -1,5 +1,6 @@
 // External Modules
 const express = require("express");
+const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 
 // Module instance
@@ -15,7 +16,7 @@ const controllers = require("./controllers");
 app.set("view engine", "ejs");
 
 // Mongodb connecton
-app.use("./config/db.connection.js");
+const dbConnection = require("./config/db.connection.js");
 
 // Middleware
 
