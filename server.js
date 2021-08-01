@@ -9,7 +9,7 @@ const app = express();
 const PORT = 3000;
 
 // Internal Modules
-const controllers = require("./controller");
+const controllers = require("./controllers");
 
 // App config
 app.set("view engine", "ejs");
@@ -24,13 +24,16 @@ module.exports = function logger(req, res, next) {
   next();
 };
 
+// Section routes
+app.use("")
+
 
 // 404
-app.get("/*", (req, res) => {
+app.get("/", (req, res) => {
   const context = {
     error: req.error,
-  },
-  return res.render("404", context);
+  };
+  res.render("404", context);
 })
 
 app.listen(PORT, () => {
