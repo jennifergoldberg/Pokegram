@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 
-// Module instance
+// Module Instance
 const app = express();
 
 // PORT
