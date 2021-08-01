@@ -18,5 +18,10 @@ router.post('/', (req, res)=> {
   res.render('new.ejs');
 });
 
+// show route - presentational - GET
+router.get('/posts/:id', (req, res) => {
+  res.send("this is the show route");
+});
+
 
 module.exports = router;
