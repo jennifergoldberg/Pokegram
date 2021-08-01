@@ -7,7 +7,7 @@ const methodOverride = require("method-override");
 const app = express();
 
 // PORT
-const PORT = 3000;
+const PORT = 4000;
 
 // Internal Modules
 const controllers = require("./controllers");
@@ -16,7 +16,7 @@ const controllers = require("./controllers");
 app.set("view engine", "ejs");
 
 // Mongodb connecton
-const dbConnection = require("./config/db.connection.js");
+// const dbConnection = require("./config/db.connection.js");
 
 // Middleware
 
@@ -31,6 +31,10 @@ app.use(function logger(req, res, next) {
   // only console.log(req.session) when we have user auth sessions
   next();
 });
+
+
+// routes
+app.use('/', controllers.post);
 
 // 404
 app.get("/*", (req, res) => {
