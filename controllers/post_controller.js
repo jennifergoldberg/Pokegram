@@ -28,4 +28,14 @@ router.get('/posts/:id/edit', (req, res) => {
   res.render('edit.ejs');
 });
 
+// update route - functional - PUT 
+router.put('/posts/:id', (req, res) => {
+  res.send('update');
+});
+
+// delete route - functional - DELETE
+router.delete('/posts/:id', (req, res) => {
+  res.send('delete');
+});
+
 module.exports = router;
