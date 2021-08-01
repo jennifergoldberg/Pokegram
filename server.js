@@ -25,12 +25,11 @@ app.use(express.urlencoded({extended: true}));
 
 app.use(methodOverride("_method"));
 
-module.exports = function logger(req, res, next) {
-  console.log(`${req.url}: ${req.method} - ${new Date().toLocaleDateString()}`);
-  console.log(req.session);
+app.use(function logger(req, res, next) {
+  console.log(`${req.url}: ${req.method} - ${new Date().toLocaleTimeString()}`);
+  // only console.log(req.session) when we have user auth sessions
   next();
-};
-
+});
 
 // 404
 app.get("/*", (req, res) => {
