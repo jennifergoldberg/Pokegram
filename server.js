@@ -9,7 +9,7 @@ const app = express();
 const PORT = 3000;
 
 // Internal Modules
-const controllers = require("./controller");
+const controllers = require("./controllers");
 
 // App config
 app.set("view engine", "ejs");
@@ -17,7 +17,14 @@ app.set("view engine", "ejs");
 // Mongodb connecton
 app.use("./config/db.connection.js");
 
-// Logger middleware
+// Middleware
+
+app.use(express.static("public"));
+
+app.use(express.urlencoded({extended: true}));
+
+app.use(methodOverride("_method"));
+
 module.exports = function logger(req, res, next) {
   console.log(`${req.url}: ${req.method} - ${new Date().toLocaleDateString()}`);
   console.log(req.session);
@@ -29,9 +36,9 @@ module.exports = function logger(req, res, next) {
 app.get("/*", (req, res) => {
   const context = {
     error: req.error,
-  },
-  return res.render("404", context);
-})
+  };
+  res.render("404", context);
+});
 
 app.listen(PORT, () => {
   console.log(`WE LITTY HERE ON PORT ${PORT}`);
