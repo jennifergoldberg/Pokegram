@@ -33,7 +33,7 @@ router.put('/posts/:id', (req, res) => {
   res.send('update');
 });
 
-// delete route - functional - DELETE
+// destroy route - functional - DELETE
 router.delete('/posts/:id', (req, res) => {
   res.send('delete');
 });
