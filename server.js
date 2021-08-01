@@ -32,6 +32,8 @@ app.use(function logger(req, res, next) {
   next();
 });
 
+app.use("/", controllers.post);
+
 // 404
 app.get("/*", (req, res) => {
   const context = {
