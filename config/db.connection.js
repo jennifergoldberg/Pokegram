@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionString = 'mongodb://localhost:27017/pokegram'
+const connectionString = process.env.MONGO_URI || 'mongodb://localhost:27017/pokegram'
 
 mongoose.connect(connectionString, {
   useCreateIndex: true,
