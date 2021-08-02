@@ -16,7 +16,7 @@ const controllers = require("./controllers");
 app.set("view engine", "ejs");
 
 // Mongodb connecton
-// const dbConnection = require("./config/db.connection.js");
+const dbConnection = require("./config/db.connection.js");
 
 // Middleware
 
