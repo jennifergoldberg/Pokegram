@@ -5,7 +5,10 @@ const { Post } = require("../models");
 
 // index route - GET
 router.get('/', (req, res) => {
-  res.send("I am the index route");
+  res.render('index');
+  if (error) {
+    console.log(error);
+  };
 });
 
 // new route - presentational - GET
