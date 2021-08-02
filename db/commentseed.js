@@ -9,17 +9,17 @@ Comment.deleteMany({}, (error, deletedComments) => {
       {
         username: "Geodude",
         text: "I LOVE THIS POST",
-        post: "610722117765661a1c58277c",
+        post: "610836e30b6a280b99ca34d0",
       },
       {
         username: "Squirtle",
         text: "Looking almost as good as me!",
-        post: "610722117765661a1c58277c",
+        post: "610836e30b6a280b99ca34d1",
       },
       {
         username: "Vaporeon",
         text: "Wish I could be there",
-        post: "610722117765661a1c58277c",
+        post: "610836e30b6a280b99ca34d2",
       },
     ],
     function (error, createdComments) {
