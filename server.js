@@ -32,9 +32,9 @@ app.use(function logger(req, res, next) {
   next();
 });
 
-
 // routes
 app.use('/', controllers.post);
+app.use('/', controllers.comment);
 
 // 404
 app.get("/*", (req, res) => {
