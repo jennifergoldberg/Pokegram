@@ -1,2 +1,13 @@
 @use "./bootstrap";
 @use "./fonts";
+
+
+
+body {
+  background-color: #FAFAFA;
+}
+
+.navbar-brand {
+  font-family: fonts.$headerFont !important;
+}
+
