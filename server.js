@@ -7,7 +7,7 @@ const methodOverride = require("method-override");
 const app = express();
 
 // PORT
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 // Internal Modules
 const controllers = require("./controllers");
