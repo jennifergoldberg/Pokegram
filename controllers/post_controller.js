@@ -63,13 +63,21 @@ router.get('/:id/edit', (req, res) => {
 });
 
 // update route - functional - PUT 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   res.send('update');
 });
 
 // destroy route - functional - DELETE
-router.delete('/:id', (req, res) => {
-  res.send('delete');
+router.delete('/:id', async (req, res, next) => {
+  try {
+    await Post.findByIdAndDelete(req.params.id);
+    await Comment.deleteMany({post: req.params.id});
+    return res.redirect("/posts");
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
 });
 
 module.exports = router;
