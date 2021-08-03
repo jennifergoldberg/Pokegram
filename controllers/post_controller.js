@@ -13,12 +13,21 @@ router.get('/', (req, res) => {
 
 // new route - presentational - GET
 router.get('/posts/new', (req, res) => {
-  res.render('new');
+  const context = {};
+  return res.render('new', context);
 });
 
 // create - functional - POST
-router.post('/', (req, res) => {
-  res.render('new.ejs');
+router.post('/posts/new', async (req, res, next) => {
+  try {
+    const createdPost = await Post.create(req.body);
+    return res.redirect(`/posts/${createdPost.id}`)
+  } catch (error) {
+    const context = {
+      error,
+    };
+    return res.render('/posts/new', context);
+  }
 });
 
 // show route - presentational - GET
