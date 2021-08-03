@@ -14,9 +14,11 @@
       <div class="card-header">
         New Post!
       </div>
+
       <div class="card-body">
-        <div class="mb-3">
-          <form action="/posts" method="_POST">
+        <form action="/posts/new" method="_POST"> 
+
+            <div class="mb-3">
             <legend>User Information</legend>
             <label for="post-username" class="form-label">Username</label>
               <input 
@@ -27,6 +29,7 @@
               placeholder="enter a username"
               maxlength="20">
             </div>
+
             <div class="mb-3">
               <select for="post-avatar" class="form-select" aria-label="Default select example">
                 <option selected>choose an avatar</option>
@@ -35,6 +38,7 @@
                 <option value="3">Three</option>
               </select>
             </div>
+
             <div class="mb-3">
             <legend>Post Information</legend>
             <label for="post-image" class="form-label">Post Image</label>
@@ -45,12 +49,13 @@
               id="post-image" 
               placeholder="http://">
             </div>
+
             <div class="mb-3">
               <label for="post-text" class="form-label">Comment</label>
                 <textarea class="form-control" name="text" id="post-text" cols="30" rows="10" placeholder="tell us about your post!" maxlength="144"></textarea>
             </div>
-          </div>
-          <button type="submit">create</button>
+
+            <button type="submit" class="btn btn-primary mb-3">Make Post!</button>
         </form>
       </div>
     </div>

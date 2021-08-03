@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const postSchema = new mongoose.Schema({
   avatar: {
     type: String,
-    // required: [true, "Please choose an Avatar from the dropdown menu"]
+    //required: [true, "Please choose an Avatar from the dropdown menu"]
   },
   username: {
     type: String,
