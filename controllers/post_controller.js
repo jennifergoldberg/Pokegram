@@ -5,10 +5,17 @@ const { Post } = require("../models");
 
 // index route - GET
 router.get('/', (req, res) => {
-  res.render('index');
-  // if (error) {
-  //   console.log(error);
-  // };
+  Post.find({}, (error, allPosts) => {
+    if(error) {
+      console.log(error);
+      req.error = error;
+      return next();
+    };
+    const context = {
+      post: allPosts,
+    };
+    return res.render("index", context);
+  });
 });
 
 // new route - presentational - GET
