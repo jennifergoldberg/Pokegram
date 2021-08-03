@@ -25,17 +25,31 @@ router.get('/posts/new', (req, res) => {
 });
 
 // create - functional - POST
-router.post('/posts/new', async (req, res, next) => {
-  try {
-    const createdPost = await Post.create(req.body);
-    return res.redirect(`/posts/${createdPost.id}`)
-  } catch (error) {
-    const context = {
-      error,
-    };
-    return res.render('/posts/new', context);
+// router.post("/posts/new", async (req, res, next) => {
+//   try {
+//     const createdPost = await Post.create(req.body);
+//     return res.redirect(`/`)
+//   } catch (error) {
+//     const context = {
+//       error,
+//     };
+//     return res.render('/posts/new', context);
+//   }
+// });
+router.post("/posts/new", (req, res) => {
+  const newPost = {
+    username: req.body.username,
+    image: req.body.image,
+    text: req.body.text
   }
-});
+  Post.create(newPost, (error, createdPost) => {
+    if (error){
+      return res.send(error);
+    }
+    return res.redirect("/posts");
+  })
+  
+})
 
 // show route - presentational - GET
 router.get('/posts/:id', (req, res) => {
