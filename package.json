@@ -8,8 +8,8 @@
     "start": "node server.js",
     "watch-sass": "sass --watch sass:public/styles",
     "watch-nodemon": "nodemon server.js",
-    "dev": "open http://localhost:4000/ && concurrently -n sass,server -c 'bgAqua.bold,bgPurple.bold' 'npm:watch-sass' 'npm:watch-nodemon'",
-    "devw": "wsl-open http://localhost:4000/ && concurrently -n sass,server -c 'bgAqua.bold,bgPurple.bold' 'npm:watch-sass' 'npm:watch-nodemon'"
+    "dev": "open http://localhost:4000/ && concurrently -n sass,server -c 'bgBlue.bold,bgYellow.bold' 'npm:watch-sass' 'npm:watch-nodemon'",
+    "devw": "wsl-open http://localhost:4000/ && concurrently -n sass,server -c 'bgBlue.bold,bgYellow.bold' 'npm:watch-sass' 'npm:watch-nodemon'"
   },
   "repository": {
     "type": "git",

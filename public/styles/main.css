@@ -10759,4 +10759,9 @@ nav {
   font-family: "Press Start 2P", cursive !important;
 }
 
+.post-avatar {
+  height: 10px;
+  width: 10px;
+}
+
 /*# sourceMappingURL=main.css.map */
