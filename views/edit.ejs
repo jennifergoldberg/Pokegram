@@ -16,7 +16,8 @@
       </div>
 
       <div class="card-body">
-        <form action="/posts/new" method="POST"> 
+        <form action="/posts/<%=post.id %>?_method=PUT" method="POST">
+        </form>
 
             <div class="mb-3">
             <legend>User Information</legend>
@@ -52,7 +53,7 @@
 
             <div class="mb-3">
               <label for="post-text" class="form-label">Caption</label>
-                <textarea class="form-control" name="text" id="post-text" cols="30" rows="10" value="<%= post.text %> " maxlength="144"></textarea>
+                <textarea class="form-control" name="text" id="post-text" cols="30" rows="10" placeholder="<%= post.text %> " value="<%= post.text %>" maxlength="144"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary mb-3">Update Post!</button>
