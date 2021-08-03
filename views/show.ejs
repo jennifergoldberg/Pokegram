@@ -21,9 +21,9 @@
       <p class="card-text"><%= post.text %> </p>
     </div>
     <ul class="list-group list-group-flush">
-      <% comment.slice().reverse().forEach(allComments => { %> 
-      <li class="list-group-item"><%= comment.text %> </li>
-      <% }; %> 
+      <% comment.slice().reverse().forEach(comments => { %> 
+      <li class="list-group-item"><%= comments.text %> </li>
+      <% }); %> 
     </ul>
     <div class="card-body">
       <a href="#" class="card-link">Card link</a>

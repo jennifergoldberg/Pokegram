@@ -69,13 +69,35 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // edit route - presentational - GET
-router.get('/:id/edit', (req, res) => {
-  res.render('edit.ejs');
+router.get("/:id/edit", (req, res, next) => {
+  Post.findById(req.params.id, (error, foundPost) => {
+    if (error) {
+      console.log(error);
+      req.error = error;
+      return next();
+    }
+
+    const context = {
+      post: foundPost,
+    };
+
+    return res.render("/:id", context);
+  });
 });
 
 // update route - functional - PUT 
-router.put('/:id', (req, res) => {
-  res.send('update');
+router.put("/:id", (req, res, next) => {
+  Post.findByIdAndUpdate( req.params.id, { $set: req.body, }, { new: true, },
+    (error, updatedPost) => {
+      if (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+      }
+      
+      return res.redirect(`/${updatedPost.id}`);
+    }
+  );
 });
 
 // destroy route - functional - DELETE
