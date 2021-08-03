@@ -52,9 +52,18 @@ router.post('/new', async (req, res) => {
 // });
 
 // show route - presentational - GET
-router.get('/:id', (req, res) => {
-  const context = {};
-  return res.render('show', context);
+router.get('/:id', async (req, res, next) => {
+  try {
+    const foundPost = await Post.findById(req.params.id);
+    const context = {
+      post: foundPost,
+    };
+    return res.render('show', context);
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
 });
 
 // edit route - presentational - GET
