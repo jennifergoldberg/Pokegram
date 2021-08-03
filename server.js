@@ -32,6 +32,8 @@ app.use(function logger(req, res, next) {
   next();
 });
 
+const avatars = require("./middleware/avatars");
+
 // routes
 app.use('/', controllers.post);
 app.use('/', controllers.comment);

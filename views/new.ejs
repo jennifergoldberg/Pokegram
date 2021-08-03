@@ -25,12 +25,12 @@
               name="name"
               id="username" 
               placeholder="enter a username"
-              max="20">
+              maxlength="20">
             </div>
             <div class="mb-3">
               <select for="post-avatar" class="form-select" aria-label="Default select example">
                 <option selected>choose an avatar</option>
-                <option value="/assets/_abra.png">Abra</option>
+                <option value="1">Abra</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </select>
@@ -47,16 +47,10 @@
             </div>
             <div class="mb-3">
               <label for="post-text" class="form-label">Comment</label>
-              <input 
-              type="text" 
-              class="form-control" 
-              name="text"
-              id="post-text" 
-              placeholder="tell us about your post!"
-              max="144">
+                <textarea class="form-control" name="text" id="post-text" cols="30" rows="10" placeholder="tell us about your post!" maxlength="144"></textarea>
             </div>
           </div>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary">Go Posts!</a>
         </form>
       </div>
     </div>
