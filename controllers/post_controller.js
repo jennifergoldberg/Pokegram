@@ -81,7 +81,7 @@ router.get("/:id/edit", (req, res, next) => {
       post: foundPost,
     };
 
-    return res.render("/:id", context);
+    return res.render("edit", context);
   });
 });
 
@@ -95,7 +95,7 @@ router.put("/:id", (req, res, next) => {
         return next();
       }
       
-      return res.redirect(`/${updatedPost.id}`);
+      return res.redirect(`/${updatedPost._id}`);
     }
   );
 });
