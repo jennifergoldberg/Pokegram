@@ -22,7 +22,7 @@ const dbConnection = require("./config/db.connection.js");
 
 app.use(express.static("public"));
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
 
 app.use(methodOverride("_method"));
 
@@ -34,9 +34,11 @@ app.use(function logger(req, res, next) {
 
 const avatars = require("./middleware/avatars");
 
+app.get("/", (req, res) => res.redirect("/posts"));
+
 // routes
-app.use('/', controllers.post);
-app.use('/', controllers.comment);
+app.use("/posts", controllers.post);
+app.use("/posts", controllers.comment);
 
 // 404
 app.get("/*", (req, res) => {
