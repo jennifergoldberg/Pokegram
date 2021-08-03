@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { Post } = require("../models");
+const { Post, Comment } = require("../models");
 
 // index route - GET
 router.get('/', (req, res) => {
@@ -55,8 +55,10 @@ router.post('/new', async (req, res) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const foundPost = await Post.findById(req.params.id);
+    const foundComment = await Comment.find({ post: req.params.id });
     const context = {
       post: foundPost,
+      comment: foundComment,
     };
     return res.render('show', context);
   } catch (error) {

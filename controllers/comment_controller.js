@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const { Comment, Post } = require("../models");
+
 // create - POST - functional
 
 router.post('/posts/:id', (req, res) => {

@@ -9,18 +9,21 @@
 <%- include("partials/_nav.ejs") %> 
 
   <div class="card mx-auto" style="width: 30rem;">
+    
     <div class="card-header">
-      Featured
+      <div class="show-header">
+        <img src="<%= post.avatar %>" alt="..." height="30">
+        <p><%= post.username %></p>
+      </div>
     </div>
     <img src="<%= post.image %>" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text"><%= post.text %> </p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
+      <% comment.slice().reverse().forEach(allComments => { %> 
+      <li class="list-group-item"><%= comment.text %> </li>
+      <% }; %> 
     </ul>
     <div class="card-body">
       <a href="#" class="card-link">Card link</a>
