@@ -53,7 +53,8 @@ router.post('/new', async (req, res) => {
 
 // show route - presentational - GET
 router.get('/:id', (req, res) => {
-  res.send("this is the show route");
+  const context = {};
+  return res.render('show', context);
 });
 
 // edit route - presentational - GET
