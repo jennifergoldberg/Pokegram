@@ -10,23 +10,54 @@
 
 
   <div class="container">
-  <h1>new</h1>
     <div class="card">
       <div class="card-header">
-        Add Photo
+        New Post!
       </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <div class="mb-3">
+          <form action="/posts" method="POST">
+            <legend>User Information</legend>
+            <label for="post-username" class="form-label">Username</label>
+              <input 
+              type="text" 
+              class="form-control" 
+              name="name"
+              id="username" 
+              placeholder="enter a username"
+              max="20">
+            </div>
+            <div class="mb-3">
+              <select for="post-avatar" class="form-select" aria-label="Default select example">
+                <option selected>choose an avatar</option>
+                <option value="/assets/_abra.png">Abra</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="mb-3">
+            <legend>Post Information</legend>
+            <label for="post-image" class="form-label">Post Image</label>
+              <input 
+              type="text" 
+              class="form-control" 
+              name="image"
+              id="post-image" 
+              placeholder="http://">
+            </div>
+            <div class="mb-3">
+              <label for="post-text" class="form-label">Comment</label>
+              <input 
+              type="text" 
+              class="form-control" 
+              name="text"
+              id="post-text" 
+              placeholder="tell us about your post!"
+              max="144">
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </form>
       </div>
     </div>
   </div>
