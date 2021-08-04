@@ -10763,4 +10763,9 @@ body {
   width: 30px;
 }
 
+.post-likes {
+  border-style: none;
+  border: none;
+}
+
 /*# sourceMappingURL=main.css.map */

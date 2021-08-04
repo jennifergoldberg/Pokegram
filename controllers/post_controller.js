@@ -37,18 +37,17 @@ router.post('/new', async (req, res) => {
   }
 });
 
-// router.post("/new", (req, res) => {
-//   const newPost = {
-//     username: req.body.username,
-//     image: req.body.image,
-//     text: req.body.text
+//update route - Likes
+// router.post('/', (req, res) => {
+//   const likeCounter = req.body.like
+//   console.log(`!!!!!!!!!! ${req.body.like}`);
+//   Post.findByIdAndUpdate(req.params.id, {$inc: {like: likeCounter }}).exec()
+//   if (error) {
+//     console.log(error);
+//     req.error = error;
+//     return next();
 //   }
-//   Post.create(newPost, (error, createdPost) => {
-//     if (error){
-//       return res.send(error);
-//     }
-//     return res.redirect("/posts");
-//   })
+//   return res.redirect('/');
 // });
 
 // show route - presentational - GET
