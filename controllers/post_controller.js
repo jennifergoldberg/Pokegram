@@ -55,6 +55,8 @@ router.get('/:id', async (req, res, next) => {
   try {
     const foundPost = await Post.findById(req.params.id);
     const foundComment = await Comment.find({ post: req.params.id });
+    console.log(foundPost);
+    console.log(foundComment);
     const context = {
       post: foundPost,
       comment: foundComment,

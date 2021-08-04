@@ -37,18 +37,36 @@
       <p class="card-text"><%= post.text %> </p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">show comment</li>
-      <li class="list-group-item"></li>
-      <li class="list-group-item"></li>
+      <% comment.forEach(comments => { %> 
+      <li class="list-group-item"><%= comments.text %> </li>
+      <% }); %> 
     </ul>
     <div class="card-body">
       <!-- <a href="#" class="card-link">Card link</a>
       <a href="#" class="card-link">Another link</a> -->
     
     <!-- <div class="input-group mb-3"> -->
-      <form action=""></form>
-      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+      <form action="/posts/<%= post.id %>" method="POST">
+      <p>Add a comment</p>
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="username" 
+        name="username"
+        maxlength="20">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="comment" 
+        name="text"
+        maxlength="144">
+      <input 
+        type="hidden"
+        name="post"
+        value= "<%= post.id %> "
+      >
+      <button class="btn btn-outline-secondary" type="submit" >Post Comment</button>
+      </form>
     <!-- </div> -->
     </div>
   </div>
