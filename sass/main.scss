@@ -5,19 +5,24 @@
 
 body {
   background-color: #FAFAFA;
+  font-family: fonts.$mainFont !important;
+  padding-top: 70px;
 }
 
-nav {
-  padding-bottom: 50px;
-}
+// nav .container {
+//   display: flex;
+//   position: fixed;
+//   justify-content: flex-end;
+// }
 
-.navbar-brand {
+.pokegram {
+  margin-left: 10px;
   font-family: fonts.$headerFont !important;
 }
 
 .post-avatar {
-  height: 10px;
-  width: 10px;
+  height: 30px;
+  width: 30px;
 }
 
 .show-header {
