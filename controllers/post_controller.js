@@ -37,18 +37,17 @@ router.post('/new', async (req, res) => {
   }
 });
 
-// router.post("/new", (req, res) => {
-//   const newPost = {
-//     username: req.body.username,
-//     image: req.body.image,
-//     text: req.body.text
+//update route - Likes
+// router.post('/', (req, res) => {
+//   const likeCounter = req.body.like
+//   console.log(`!!!!!!!!!! ${req.body.like}`);
+//   Post.findByIdAndUpdate(req.params.id, {$inc: {like: likeCounter }}).exec()
+//   if (error) {
+//     console.log(error);
+//     req.error = error;
+//     return next();
 //   }
-//   Post.create(newPost, (error, createdPost) => {
-//     if (error){
-//       return res.send(error);
-//     }
-//     return res.redirect("/posts");
-//   })
+//   return res.redirect('/');
 // });
 
 // show route - presentational - GET
@@ -69,6 +68,21 @@ router.get('/:id', async (req, res, next) => {
     return next();
   }
 });
+
+router.post("/addcomment/:id", async (req, res) => {
+  try { 
+    // const foundPost = await Post.findById(req.params.id);
+    // console.log("foundPost", foundPost);
+    req.body.post = req.params.id;
+    const createdComment = await Comment.create(req.body);
+    console.log("createdComment", createdComment);
+    return res.redirect(`/posts/${req.params.id}`)
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    }
+  }
+);
 
 // edit route - presentational - GET
 router.get("/:id/edit", (req, res, next) => {

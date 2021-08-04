@@ -11,15 +11,17 @@
   <div class="card mx-auto" style="width: 30rem;">
     <div class="show-container">
       <div class="card-header">
-        <div class="show-header d-flex justify-content-start">
-          <img src="<%= post.avatar %>" alt="avatar icon" height="30">
-          <p><%= post.username %></p>
         
+        <div class="show-header d-flex justify-content-between">
+          <div class="d-flex align-items-center">
+            <img src="<%= post.avatar %>" alt="avatar icon" height="30">
+            <span class="ml-5"><%= post.username %></span>
+          </div>
 
         <div class="dropdown d-flex justify-content-end">
-          <a class="btn btn-secondary dropdown-toggle-split" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          <a class="btn btn-link dropdown-toggle-split" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg class="dark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+              <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
             </svg>
           </a>
         
@@ -46,26 +48,21 @@
       <a href="#" class="card-link">Another link</a> -->
     
     <!-- <div class="input-group mb-3"> -->
-      <form action="/posts/<%= post.id %>" method="POST">
-      <p>Add a comment</p>
-      <input 
-        type="text" 
-        class="form-control" 
-        placeholder="username" 
-        name="username"
-        maxlength="20">
-      <input 
-        type="text" 
-        class="form-control" 
-        placeholder="comment" 
-        name="text"
-        maxlength="144">
-      <input 
-        type="hidden"
-        name="post"
-        value= "<%= post.id %> "
-      >
-      <button class="btn btn-outline-secondary" type="submit" >Post Comment</button>
+      <form action="/posts/addcomment/<%= post._id %>" method="POST">
+        <p>Add a comment</p>
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="username" 
+          name="username"
+          maxlength="20">
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="comment" 
+          name="text"
+          maxlength="144">
+        <button class="btn btn-outline-secondary" type="submit" >Post Comment</button>
       </form>
     <!-- </div> -->
     </div>
