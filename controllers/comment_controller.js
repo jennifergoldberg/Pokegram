@@ -5,16 +5,31 @@ const { Comment, Post } = require("../models");
 
 // create - POST - functional
 
-router.post("/", (req, res) => {
-  Comment.create(req.body, (error, createdComment) => {
-    if(error) {
-      console.log(error);
-      req.error = error;
-      return next();
+// router.post("/", (req, res, next) => {
+//   Comment.create(req.body, (error, createdComment) => {
+//     if(error) {
+//       console.log(error);
+//       req.error = error;
+//       return next();
+//     }
+//     return res.redirect('/')
+//   })
+//   // res.send("comment");
+// });
+
+router.post("/:id", async (req, res) => {
+  try { 
+    const createdComment = await Comment.create(req.body);
+    const context = {
+      comment: createdComment
     }
-    return res.redirect("/")
-  })
-  res.send("comment");
+    return res.redirect(`/${post.id}`)
+  } catch (error) {
+    const context = {
+      error,
+    }
+    return res.render('index', context);
+  }
 });
 
 // update - PUT - functional
