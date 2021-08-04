@@ -94,7 +94,7 @@ router.put("/:id", (req, res, next) => {
         return next();
       }
       
-      return res.redirect(`/${updatedPost._id}`);
+      return res.redirect('/');
     }
   );
 });
