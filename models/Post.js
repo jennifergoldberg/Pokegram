@@ -14,7 +14,7 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: [true, "Your Poképost must have an image"],
   },
-  like: {
+  likes: {
     type: Boolean,
     default: false,
   },

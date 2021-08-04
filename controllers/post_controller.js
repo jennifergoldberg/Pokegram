@@ -55,17 +55,21 @@ router.post('/new', async (req, res) => {
 });
 
 // update route - Likes
-// router.post('/', (req, res) => {
-//   const likeCounter = req.body.like
-//   console.log(`!!!!!!!!!! ${req.body.like}`);
-//   Post.findByIdAndUpdate(req.params.id, {$inc: {like: likeCounter }}).exec()
-//   if (error) {
-//     console.log(error);
-//     req.error = error;
-//     return next();
-//   }
-//   return res.redirect('/');
-// });
+router.put('/likes/:id', async (req, res, next) => {
+  try {
+    const foundPost = await Post.findById(req.params.id);
+    await Post.findByIdAndUpdate(
+      req.params.id, 
+      { $set: { likes: !foundPost.likes }}, 
+      { new: true })
+    return res.redirect('/posts');
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+
+});
 
 // show route - presentational - GET
 router.get('/:id', async (req, res, next) => {

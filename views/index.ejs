@@ -26,11 +26,19 @@
       
       <div class="card-body">
         <section class="post-text, d-flex">
-          <!-- <form action="/" method=POST>
-          <input type="number"> -->
-          <%  %> 
-          <img class="post-likes" style="cursor: pointer;" src="/assets/_heart-static.png" alt="like" height="30px">
-          <!-- </form> -->
+
+          <form action="/posts/likes/<%= allPosts._id %>?_method=PUT" method="POST">
+            <%if (allPosts.likes !== false ) { %> 
+              <button type="submit">
+                <img class="post-likes" style="cursor: pointer;" src="/assets/_Favourite.png" alt="like" height="30px">
+              </button>
+              <% } else { %> 
+              <button type="submit">
+                <img class="post-likes" style="cursor: pointer;" src="/assets/_heart-static.png" alt="like" height="30px">
+              </button>
+            <% }; %> 
+          </form>
+
           <p><%= allPosts.text %></p>
         </section>
         <ul class="list-group list-group-flush">
