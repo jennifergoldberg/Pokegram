@@ -54,7 +54,7 @@ router.post('/new', async (req, res) => {
   }
 });
 
-//update route - Likes
+// update route - Likes
 // router.post('/', (req, res) => {
 //   const likeCounter = req.body.like
 //   console.log(`!!!!!!!!!! ${req.body.like}`);
