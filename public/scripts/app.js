@@ -1,1 +1,6 @@
-console.log("I had to put something in this file so git would track it");
+var myModal = document.getElementById('show-delete')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+});
