@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
       console.log(error);
       req.error = error;
       return next();
-    };
+    };                  
     const context = {
       post: allPosts,
     };
