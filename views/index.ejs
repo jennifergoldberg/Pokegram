@@ -33,10 +33,10 @@
           <p><%= allPosts.text %></p>
         </section>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
+          <% comment.forEach(comments => { %> 
+            <li class="list-group-item"><strong><%= comments.username %></strong> - <%= comments.text %> </li>
+            <% }); %> 
+          </ul>
         <a href="/posts/<%= allPosts._id%> " class="btn btn-primary">Comment on this post</a>
       </div>
     </div>
