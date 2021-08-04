@@ -38,7 +38,7 @@ app.get("/", (req, res) => res.redirect("/posts"));
 
 // routes
 app.use("/posts", controllers.post);
-app.use("/posts", controllers.comment);
+app.use("/comments", controllers.comment);
 
 // 404
 app.get("/*", (req, res) => {

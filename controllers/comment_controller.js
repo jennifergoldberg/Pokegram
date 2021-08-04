@@ -17,20 +17,6 @@ const { Comment, Post } = require("../models");
 //   // res.send("comment");
 // });
 
-router.post("/:id", async (req, res) => {
-  try { 
-    const createdComment = await Comment.create(req.body);
-    const context = {
-      comment: createdComment
-    }
-    return res.redirect(`/${post.id}`)
-  } catch (error) {
-    const context = {
-      error,
-    }
-    return res.render('index', context);
-  }
-});
 
 // update - PUT - functional
 
