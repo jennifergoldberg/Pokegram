@@ -13,7 +13,6 @@
 //   $("#post-likes src").attr("src", "/assets/_Favourite.png")
 // });
 
-
-document.querySelector(".post-likes").addEventListener("click", () => {
-  (".post-likes").setAttribute("src", "/assets/_Favourite.png")
-});
+// document.querySelector(".post-likes").addEventListener("click", () => {
+//   (".post-likes").setAttribute("src", "/assets/_Favourite.png")
+// });
