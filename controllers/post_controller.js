@@ -4,18 +4,35 @@ const router = express.Router();
 const { Post, Comment } = require("../models");
 
 // index route - GET
-router.get('/', (req, res) => {
-  Post.find({}, (error, allPosts) => {
-    if(error) {
-      console.log(error);
-      req.error = error;
-      return next();
-    };                  
+// router.get('/', (req, res) => {
+//   Post.find({}, (error, allPosts) => {
+//     if(error) {
+//       console.log(error);
+//       req.error = error;
+//       return next();
+//     };                  
+//     const context = {
+//       post: allPosts,
+//       comment: allComments,
+//     };
+//     return res.render("index", context);
+//   });
+// });
+
+router.get('/', async (req, res, next) => {
+  try {
+    const allPosts= await Post.find({});
+    const allComments= await Comment.find({});
     const context = {
       post: allPosts,
+      comment: allComments,
     };
     return res.render("index", context);
-  });
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next()
+  }
 });
 
 // new route - presentational - GET

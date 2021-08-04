@@ -40,9 +40,10 @@
     </div>
     <ul class="list-group list-group-flush">
       <% comment.forEach(comments => { %> 
-      <li class="list-group-item"><%= comments.text %> </li>
+      <li class="list-group-item"><strong><%= comments.username %></strong> - <%= comments.text %> </li>
       <% }); %> 
     </ul>
+
     <div class="card-body">
       <!-- <a href="#" class="card-link">Card link</a>
       <a href="#" class="card-link">Another link</a> -->
