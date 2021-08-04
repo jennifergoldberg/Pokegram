@@ -34,7 +34,9 @@
         </section>
         <ul class="list-group list-group-flush">
           <% comment.forEach(comments => { %> 
+            <% if(comments.post == allPosts.id) { %> 
             <li class="list-group-item"><strong><%= comments.username %></strong> - <%= comments.text %> </li>
+            <% } %> 
             <% }); %> 
           </ul>
         <a href="/posts/<%= allPosts._id%> " class="btn btn-primary">Comment on this post</a>
