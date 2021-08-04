@@ -87,8 +87,7 @@ router.get("/:id/edit", (req, res, next) => {
 
 // update route - functional - PUT 
 router.put("/:id", (req, res, next) => {
-  Post.findByIdAndUpdate( req.params.id, { $set: req.body, }, { new: true, },
-    (error, updatedPost) => {
+  Post.findByIdAndUpdate( req.params.id, { $set: req.body, }, { new: true, }, (error, updatedPost) => {
       if (error) {
         console.log(error);
         req.error = error;
