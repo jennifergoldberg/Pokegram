@@ -17,10 +17,9 @@ const { Comment, Post } = require("../models");
 //   // res.send("comment");
 // });
 
-
 // update - PUT - functional
 
-router.put("/:id", (req, res, next) => {
+router.put("/:id/", (req, res, next) => {
   Comment.findByIdAndUpdate( req.params.id, { $set: req.body, }, { new: true, },
     (error, updatedComment) => {
       if (error) {
@@ -29,14 +28,14 @@ router.put("/:id", (req, res, next) => {
         return next();
       }
       
-      return res.redirect(`/${updatedComment.id}`);
+      return res.redirect(`/${post.id}`);
     }
   );
 });
 
 // destroy - DELETE - functional
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/comment/:id', async (req, res, next) => {
   try {
     await Comment.findByIdAndDelete(req.params.id);
     return res.redirect("/posts")
