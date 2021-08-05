@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head Partial -->
+<%- include("partials/_head.ejs") %>
+
+<body>
+<!-- Nav Partial -->
+<%- include("partials/_nav.ejs") %> 
+
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header" style="font-family: 'Press Start 2P';">
+        'Gotta Make a New Post!
+      </div>
+
+      <div class="card-body">
+        <form action="/posts/new" method="POST" class="needs-validation"> 
+
+            <div class="mb-3">
+            <legend>User Information</legend>
+            <label for="validationCustomUsername" class="form-label">Username</label>
+            <div class="input-group has-validation">
+              <input 
+              type="text" 
+              class="form-control"  
+              name="username" 
+              placeholder="enter a username"
+              maxlength="20"
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend3 validationCustomUsernameFeedback" 
+              required>
+              <div id="validationCustomUsernameFeedback" class="invalid-feedback">
+                Please enter a username for your Poképost.
+              </div>
+            </div>
+            <% const avatars =[ { name: "abra", src: "/assets/_abra.png" }, { name: "eevee", src: "/assets/_eevee.png" } ] %> 
+            <div class="mb-3">
+              <label for="validationCustomUsername" class="form-label">Avatar</label>
+              <select name="avatar" for="user-avatar" class="form-select" aria-label="Default select example">
+                <option selected>choose an avatar</option>
+                <% avatars.forEach(avatar => { %> 
+                  <option value="<%= avatar.src %>"><%= avatar.name %></option>
+                  <% }) %> 
+              </select>
+            </div>
+
+            <div class="mb-3">
+            <legend>Post Information</legend>
+            <label class="form-label" for="validationCustomImage">Post Image</label>
+              <input 
+              type="text" 
+              class="form-control" 
+              name="image" 
+              placeholder="http://"
+              id="validationCustomImage"
+              aria-describedby="inputGroupPrepend3 validationCustomImageFeedback" 
+              required>
+              <div id="validationCustomImageFeedback" class="invalid-feedback">
+                Please enter an image for your Poképost.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="validationCustomText">Comment</label>
+                <textarea class="form-control" name="text" id="validationCustomText" cols="30" rows="5" placeholder="tell us about your post!" maxlength="144"id="validationCustomUsername" aria-describedby="inputGroupPrepend3 validationCustomTextFeedback" 
+                required></textarea>
+                <div id="validationCustomImageFeedback" class="invalid-feedback">
+                  Please tell us about your Poképost.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary mb-1" style="font-family: 'Press Start 2P';">Post it!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
