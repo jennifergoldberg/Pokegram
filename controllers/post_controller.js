@@ -68,8 +68,25 @@ router.put('/likes/:id', async (req, res, next) => {
     req.error = error;
     return next();
   }
-
 });
+
+// update route - Comment likes
+router.put('/comments/likes/:id', async (req, res, next) => {
+  try {
+    const foundComment = await Comment.findById(req.params.id);
+    console.log(foundComment);
+    await Comment.findByIdAndUpdate(
+      req.params.id, 
+      { $set: { likes: !foundComment.likes }}, 
+      { new: true })
+    return res.redirect('/posts');
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+});
+
 
 // show route - presentational - GET
 router.get('/:id', async (req, res, next) => {

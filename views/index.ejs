@@ -54,8 +54,8 @@
               </strong> 
                 - <%= comments.text %>
                 </section> 
-              <form action="/posts/likes/<%= allPosts._id %>?_method=PUT" method="POST">
-                <%if (allPosts.likes !== false ) { %> 
+              <form action="posts/comments/likes/<%= comments._id %>?_method=PUT" method="POST">
+                <%if (comments.likes !== false ) { %> 
                   <button type="submit">
                     <img class="post-likes" style="cursor: pointer;" src="/assets/_Favourite.png" alt="like" height="30px">
                   </button>
@@ -69,7 +69,7 @@
             <% } %> 
             <% }); %> 
           </ul>
-        <a href="/posts/<%= allPosts._id%> " class="btn btn-primary">Comment on this post</a>
+        <a href="/posts/<%= allPosts._id%> " class="btn btn-primary justify-content-around">Comment on this post</a>
       </div>
     </div>
     </section>
