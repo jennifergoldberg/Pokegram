@@ -35,14 +35,14 @@
                 Please enter a username for your Poképost.
               </div>
             </div>
-
+            <% const avatars =[ { name: "abra", src: "/assets/_abra.png" }, { name: "eevee", src: "/assets/_eevee.png" } ] %> 
             <div class="mb-3">
               <label for="validationCustomUsername" class="form-label">Avatar</label>
-              <select for="user-avatar" class="form-select" aria-label="Default select example">
+              <select name="avatar" for="user-avatar" class="form-select" aria-label="Default select example">
                 <option selected>choose an avatar</option>
-                <option id="abra" class="avatar" value="1">Abra</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <% avatars.forEach(avatar => { %> 
+                  <option value="<%= avatar.src %>"><%= avatar.name %></option>
+                  <% }) %> 
               </select>
             </div>
 
