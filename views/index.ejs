@@ -12,10 +12,10 @@
 <% post.slice().reverse().forEach(allPosts => { %>
   <section>
     <div class="card mx-auto" style="width: 30rem;">
-      <section class="top d-flex justify-content-between">
-        <section class="d-flex">
+      <section id="index-card-top" class="top d-flex justify-content-between">
+        <section class="d-flex align-items-center">
             <img class="post-avatar" src= "<%= allPosts.avatar %> " alt="avatar" height="30px"> 
-          <h5 class="post-user">
+          <h5 class="post-user" style="font-family: 'Press Start 2P', cursive">
             <%= allPosts.username %>
           </h5>
       </section>
@@ -39,11 +39,11 @@
 
           <form action="/posts/likes/<%= allPosts._id %>?_method=PUT" method="POST">
             <%if (allPosts.likes !== false ) { %> 
-              <button type="submit" aria-expanded="false">
+              <button class="likes" type="submit" aria-expanded="false">
                 <img class="post-likes" style="cursor: pointer;" src="/assets/_Favourite.png" alt="like" height="30px">
               </button>
               <% } else { %> 
-              <button type="submit" aria-expanded="false">
+              <button class="likes" type="submit" aria-expanded="false">
                 <img class="post-likes" style="cursor: pointer;" src="/assets/_heart-static.png" alt="like" height="30px">
               </button>
             <% }; %> 
@@ -64,11 +64,11 @@
                 </section> 
               <form action="posts/comments/likes/<%= comments._id %>?_method=PUT" method="POST">
                 <%if (comments.likes !== false ) { %> 
-                  <button type="submit">
+                  <button class="likes" type="submit">
                     <img class="post-likes" style="cursor: pointer;" src="/assets/_Favourite.png" alt="like" height="30px">
                   </button>
                   <% } else { %> 
-                  <button type="submit">
+                  <button class="likes" type="submit">
                     <img class="post-likes" style="cursor: pointer;" src="/assets/_heart-static.png" alt="like" height="30px">
                   </button>
                 <% }; %> 
