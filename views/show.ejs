@@ -48,12 +48,12 @@
             </svg>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="/comment/<%= comments.id%>/edit">Edit Comment</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editCommentModal" >Edit Comment</a></li>
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteCommentModal" href="#">Delete Comment</a></li>
           </ul>
         </div>
       </li>
-      <!-- Delete Comments Modal -->
+<!-- Delete Comments Modal -->
 
 <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -75,8 +75,50 @@
     </div>
   </div>
 </div>
-      <% }); %> 
-    </ul>
+
+<!-- Edit Comments Modal -->
+
+<div class="modal fade" id="editCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteCommentModalLabel">Edit Comment</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+      <form action="/comments/<%=comments.id %>?_method=PUT" method="POST">
+          <label type="text" >Username</label>
+          <input  
+            class="form-control" 
+            value="<%= comments.username %> " 
+            name="username"
+            maxlength="20" 
+            type="text">
+          <label type="text">Comment</label>
+          <input 
+            type="text"           
+            class="form-control" 
+            value="<%= comments.text %> "
+            name="text"
+            maxlength="144" 
+            class="form-control validate">
+        </div>
+        <div class="modal-footer">
+          <button 
+            type="button" 
+            class="btn btn-secondary" 
+            data-bs-dismiss="modal"
+            >Close</button>
+          <input type="submit" class="btn btn-primary" value="Edit">
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <% }); %> 
+</ul>
 
     <div class="card-body">
       <!-- <a href="#" class="card-link">Card link</a>
