@@ -12,3 +12,4 @@ switch(avatar) {
 };
 
 
+module.exports = avatar;
