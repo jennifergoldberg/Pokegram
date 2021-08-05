@@ -32,8 +32,6 @@ app.use(function logger(req, res, next) {
   next();
 });
 
-const avatars = require("./middleware/avatars");
-
 app.get("/", (req, res) => res.redirect("/posts"));
 
 // routes
