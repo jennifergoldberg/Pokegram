@@ -16,22 +16,22 @@
       </div>
 
       <div class="card-body">
-        <form action="/posts/new" method="POST" class="needs-validation" novalidate> 
+        <form action="/posts/new" method="POST" class="needs-validation"> 
 
             <div class="mb-3">
             <legend>User Information</legend>
-            <label for="validationServerUsername" class="form-label">Username</label>
+            <label for="validationCustomUsername" class="form-label">Username</label>
             <div class="input-group has-validation">
               <input 
               type="text" 
-              class="form-control is-invalid"  
+              class="form-control"  
               name="username" 
               placeholder="enter a username"
               maxlength="20"
-              id="validationServerUsername"
-              aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" 
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend3 validationCustomUsernameFeedback" 
               required>
-              <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              <div id="validationCustomUsernameFeedback" class="invalid-feedback">
                 Please enter a username for your Poképost.
               </div>
             </div>
@@ -47,26 +47,26 @@
 
             <div class="mb-3">
             <legend>Post Information</legend>
-            <label class="form-label" for="validationServerImage">Post Image</label>
+            <label class="form-label" for="validationCustomImage">Post Image</label>
               <input 
               type="text" 
-              class="form-control is-invalid" 
+              class="form-control" 
               name="image" 
               placeholder="http://"
-              id="validationServerImage"
-              aria-describedby="inputGroupPrepend3 validationServerImageFeedback" 
+              id="validationCustomImage"
+              aria-describedby="inputGroupPrepend3 validationCustomImageFeedback" 
               required>
-              <div id="validationServerImageFeedback" class="invalid-feedback">
+              <div id="validationCustomImageFeedback" class="invalid-feedback">
                 Please enter an image for your Poképost.
               </div>
               
             </div>
 
             <div class="mb-3">
-              <label class="form-label" for="validationServerText">Comment</label>
-                <textarea class="form-control is-invalid" name="text" id="validationServerText" cols="30" rows="5" placeholder="tell us about your post!" maxlength="144"id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerTextFeedback" 
+              <label class="form-label" for="validationCustomText">Comment</label>
+                <textarea class="form-control" name="text" id="validationCustomText" cols="30" rows="5" placeholder="tell us about your post!" maxlength="144"id="validationCustomUsername" aria-describedby="inputGroupPrepend3 validationCustomTextFeedback" 
                 required></textarea>
-                <div id="validationServerTextFeedback" class="invalid-feedback">
+                <div id="validationCustomImageFeedback" class="invalid-feedback">
                   Please tell us about your Poképost.
                 </div>
             </div>
