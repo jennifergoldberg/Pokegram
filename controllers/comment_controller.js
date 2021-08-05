@@ -35,7 +35,7 @@ router.put("/:id/", (req, res, next) => {
 
 // destroy - DELETE - functional
 
-router.delete('/comment/:id', async (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
   try {
     await Comment.findByIdAndDelete(req.params.id);
     return res.redirect("/posts")
