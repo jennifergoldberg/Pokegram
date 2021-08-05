@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const avatars = require("../middleware/avatars");
 
 const { Post, Comment } = require("../models");
 
@@ -19,7 +20,7 @@ const { Post, Comment } = require("../models");
 //   });
 // });
 
-router.get('/', async (req, res, next) => {
+router.get('/',  async (req, res, next) => {
   try {
     const allPosts= await Post.find({});
     const allComments= await Comment.find({});
@@ -43,6 +44,10 @@ router.get('/new', (req, res) => {
 
 // create - functional - POST
 router.post('/new', async (req, res) => {
+  // console.log(req.body);
+  // const body = {
+  //   { username: req.body.username}
+  // }
   try { 
     const createdPost = await Post.create(req.body);
     return res.redirect("/")
