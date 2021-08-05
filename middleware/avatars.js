@@ -1,4 +1,3 @@
-
 class Avatar {
   name
   image
@@ -8,7 +7,7 @@ class Avatar {
   }
 };
 
-const abra = new Avatar("abra", "/assets/_abra.png");
+const abra = new Avatar("abra", "../assets/_abra.png");
 
 
 const avatars = {
