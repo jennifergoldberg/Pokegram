@@ -16,18 +16,25 @@
       </div>
 
       <div class="card-body">
-        <form action="/posts/new" method="POST"> 
+        <form action="/posts/new" method="POST" boolean="novalidate"> 
 
             <div class="mb-3">
             <legend>User Information</legend>
-            <label for="post-username" class="form-label">Username</label>
+            <label for="post-username" class="form-label" for="validationCustomUsername">Username</label>
+            <div class="input-group has-validation">
               <input 
               type="text" 
-              class="form-control" 
+              class="form-control is-invalid"  
               name="username"
-              id="username" 
+              id="validationCustom01" 
               placeholder="enter a username"
-              maxlength="20">
+              maxlength="20"
+              id="validationServerUsername"
+              aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" 
+              required>
+              <div class="invalid-feedback">
+                Please enter a username for your Poképost.
+              </div>
             </div>
 
             <div class="mb-3">
@@ -41,18 +48,29 @@
 
             <div class="mb-3">
             <legend>Post Information</legend>
-            <label for="post-image" class="form-label">Post Image</label>
+            <label for="post-image" class="form-label" for="validationCustomUsername">Post Image</label>
               <input 
               type="text" 
-              class="form-control" 
+              class="form-control is-invalid" 
               name="image"
-              id="post-image" 
-              placeholder="http://">
+              id="validationCustom01" 
+              placeholder="http://"
+              id="validationServerUsername"
+              aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" 
+              required>
+              <div class="invalid-feedback">
+                Please enter an image for your Poképost.
+              </div>
+              
             </div>
 
             <div class="mb-3">
-              <label for="post-text" class="form-label">Comment</label>
-                <textarea class="form-control" name="text" id="post-text" cols="30" rows="5" placeholder="tell us about your post!" maxlength="144"></textarea>
+              <label for="post-text" class="form-label" for="validationCustomUsername">Comment</label>
+                <textarea class="form-control is-invalid" name="text" id="validationCustom01" cols="30" rows="5" placeholder="tell us about your post!" maxlength="144"id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" 
+                required></textarea>
+                <div class="invalid-feedback">
+                  Please tell us about your Poképost.
+                </div>
             </div>
 
             <button type="submit" class="btn btn-primary mb-3"style="font-family: 'Press Start 2P';">Post it!</button>
