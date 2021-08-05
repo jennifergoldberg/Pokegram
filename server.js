@@ -46,6 +46,8 @@ app.get("/*", (req, res) => {
   res.render("404", context);
 });
 
-app.listen(PORT, () => {
-  console.log(`WE LITTY HERE ON PORT ${PORT}`);
-});
+app.listen(process.env.PORT || 4000);
+
+// app.listen(PORT, () => {
+//   console.log(`WE LITTY HERE ON PORT ${PORT}`);
+// });
