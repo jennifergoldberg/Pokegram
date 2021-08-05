@@ -37,9 +37,10 @@
             </div>
 
             <div class="mb-3">
-              <select for="post-avatar" class="form-select" aria-label="Default select example">
+              <label for="validationCustomUsername" class="form-label">Avatar</label>
+              <select for="user-avatar" class="form-select" aria-label="Default select example">
                 <option selected>choose an avatar</option>
-                <option value="1">Abra</option>
+                <option id="abra" class="avatar" value="1">Abra</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
               </select>
@@ -59,7 +60,6 @@
               <div id="validationCustomImageFeedback" class="invalid-feedback">
                 Please enter an image for your Poképost.
               </div>
-              
             </div>
 
             <div class="mb-3">
@@ -71,7 +71,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary mb-3"style="font-family: 'Press Start 2P';">Post it!</button>
+            <button type="submit" class="btn btn-primary mb-1" style="font-family: 'Press Start 2P';">Post it!</button>
         </form>
       </div>
     </div>
