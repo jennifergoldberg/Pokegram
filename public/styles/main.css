@@ -10758,6 +10758,10 @@ nav.navbar-light .navbar-brand {
   vertical-align: middle;
 }
 
+a#dropdownMenuLink.btn.btn-link.dropdown-toggle-split.d-flex {
+  justify-content: end !important;
+}
+
 h5, .h5 {
   font-size: 0.75rem;
   padding: 10px 5px;
@@ -10839,10 +10843,6 @@ svg.dark {
 
 #new-card {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-a#dropdownMenuLink.btn.btn-link.dropdown-toggle-split {
-  justify-content: space-between;
 }
 
 /*# sourceMappingURL=main.css.map */

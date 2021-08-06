@@ -105,22 +105,6 @@ router.post("/addcomment/:id", async (req, res) => {
 }
 );
 
-
-// router.post("/indexcomment/:id", async (req, res) => {
-//   try {
-//     // const foundPost = await Post.findById(req.params.id);
-//     // console.log("foundPost", foundPost);
-//     req.body.post = req.params.id;
-//     const createdComment = await Comment.create(req.body);
-//     console.log("createdComment", createdComment);
-//     return res.redirect("/posts")
-//   } catch (error) {
-//     console.log(error);
-//     req.error = error;
-//   }
-// }
-// );
-
 // edit route - presentational - GET
 router.get("/:id/edit", (req, res, next) => {
   Post.findById(req.params.id, (error, foundPost) => {
