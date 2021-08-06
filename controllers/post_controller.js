@@ -3,26 +3,10 @@ const router = express.Router();
 
 const { Post, Comment } = require("../models");
 
-// index route - GET
-// router.get('/', (req, res) => {
-//   Post.find({}, (error, allPosts) => {
-//     if(error) {
-//       console.log(error);
-//       req.error = error;
-//       return next();
-//     };                  
-//     const context = {
-//       post: allPosts,
-//       comment: allComments,
-//     };
-//     return res.render("index", context);
-//   });
-// });
-
-router.get('/',  async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
-    const allPosts= await Post.find({});
-    const allComments= await Comment.find({});
+    const allPosts = await Post.find({});
+    const allComments = await Comment.find({});
     const context = {
       post: allPosts,
       comment: allComments,
@@ -47,7 +31,7 @@ router.post('/new', async (req, res) => {
   // const body = {
   //   { username: req.body.username}
   // }
-  try { 
+  try {
     const createdPost = await Post.create(req.body);
     return res.redirect("/")
   } catch (error) {
@@ -63,8 +47,8 @@ router.put('/likes/:id', async (req, res, next) => {
   try {
     const foundPost = await Post.findById(req.params.id);
     await Post.findByIdAndUpdate(
-      req.params.id, 
-      { $set: { likes: !foundPost.likes }}, 
+      req.params.id,
+      { $set: { likes: !foundPost.likes } },
       { new: true })
     return res.redirect('/posts');
   } catch (error) {
@@ -80,8 +64,8 @@ router.put('/comments/likes/:id', async (req, res, next) => {
     const foundComment = await Comment.findById(req.params.id);
     console.log(foundComment);
     await Comment.findByIdAndUpdate(
-      req.params.id, 
-      { $set: { likes: !foundComment.likes }}, 
+      req.params.id,
+      { $set: { likes: !foundComment.likes } },
       { new: true })
     return res.redirect('/posts');
   } catch (error) {
@@ -112,7 +96,7 @@ router.get('/:id', async (req, res, next) => {
 });
 
 router.post("/addcomment/:id", async (req, res) => {
-  try { 
+  try {
     // const foundPost = await Post.findById(req.params.id);
     // console.log("foundPost", foundPost);
     req.body.post = req.params.id;
@@ -122,8 +106,8 @@ router.post("/addcomment/:id", async (req, res) => {
   } catch (error) {
     console.log(error);
     req.error = error;
-    }
   }
+}
 );
 
 // edit route - presentational - GET
@@ -145,15 +129,15 @@ router.get("/:id/edit", (req, res, next) => {
 
 // update route - functional - PUT 
 router.put("/:id", (req, res, next) => {
-  Post.findByIdAndUpdate( req.params.id, { $set: req.body, }, { new: true, }, (error, updatedPost) => {
-      if (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-      }
-      
-      return res.redirect('/');
+  Post.findByIdAndUpdate(req.params.id, { $set: req.body, }, { new: true, }, (error, updatedPost) => {
+    if (error) {
+      console.log(error);
+      req.error = error;
+      return next();
     }
+
+    return res.redirect('/');
+  }
   );
 });
 
@@ -161,7 +145,7 @@ router.put("/:id", (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
   try {
     await Post.findByIdAndDelete(req.params.id);
-    await Comment.deleteMany({post: req.params.id});
+    await Comment.deleteMany({ post: req.params.id });
     return res.redirect("/posts");
   } catch (error) {
     console.log(error);

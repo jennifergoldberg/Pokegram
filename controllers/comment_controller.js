@@ -3,37 +3,9 @@ const router = express.Router();
 
 const { Comment, Post } = require("../models");
 
-// create - POST - functional
-
-// router.post("/", (req, res, next) => {
-//   Comment.create(req.body, (error, createdComment) => {
-//     if(error) {
-//       console.log(error);
-//       req.error = error;
-//       return next();
-//     }
-//     return res.redirect('/')
-//   })
-//   // res.send("comment");
-// });
-
-// update - PUT - functional
-
-// router.put("/:id", (req, res, next) => {
-//   Comment.findByIdAndUpdate( req.params.id, { $set: req.body, }, { new: true, },
-//     (error, updatedComment) => {
-//       if (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//       }     
-//       return res.redirect("/posts");
-//     }
-//   );
-// });
-
+// update - update - functional
 router.put("/:id", async (req, res, next) => {
-  try{
+  try {
     const updatedComment = await Comment.findByIdAndUpdate(req.params.id, { $set: req.body, }, { new: true, });
     console.log(updatedComment);
     return res.redirect(`/posts/${updatedComment.post}`);
