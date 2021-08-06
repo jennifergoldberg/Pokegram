@@ -72,6 +72,15 @@ button.likes {
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
+#show-username{
+margin-left: 10px;
+font-size: 14px;
+}
+
+#three-dot-show {
+  margin-bottom: 10px;
+}
+
 svg.dark {
   margin: 10px 5px 0 0;
   vertical-align: middle;
@@ -97,4 +106,8 @@ svg.dark {
 
 #new-card {
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
+a#dropdownMenuLink.btn.btn-link.dropdown-toggle-split {
+  justify-content: space-between;
 }
