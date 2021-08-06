@@ -16,5 +16,7 @@
     })
 })()
 
-let avatar = document.querySelectorAll(".avatar");
-console.log(avatar)
+
+
+
+
