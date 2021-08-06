@@ -9,23 +9,22 @@
     <%- include("partials/_nav.ejs") %>
 
 
-      <div class="container">
+      <div class="container mt-3">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header" style="font-family: 'Press Start 2P';">
             Edit Post!
           </div>
 
           <div class="card-body">
             <form action="/posts/<%=post.id %>?_method=PUT" method="POST">
               <div class="mb-3">
-                <legend>User Information</legend>
+                <legend><strong>User Information</strong></legend>
                 <label for="post-username" class="form-label">Username</label>
                 <input type="text" class="form-control" name="username" id="username" value="<%= post.username %> "
                   maxlength="20">
               </div>
 
-              <% const avatars=[ { name: "abra" , src: "/assets/_abra.png" }, { name: "bellsprout" ,
-              src: "/assets/_bellsprout.png" }, { name: "eevee" , src: "/assets/_eevee.png" },] %>
+              <% const avatars=[ { name: "abra" , src: "/assets/_abra.png" }, { name: "bellsprout", src: "/assets/_bellsprout.png" }, { name: "bulbasaur" , src: "/assets/_bulbasaur.png" }, { name: "caterpie", src: "/assets/_caterpie.png" }, { name: "charmander", src: "/assets/_charmander.png" }, { name: "dratini" , src: "/assets/_dratini.png" }, { name: "eevee" , src: "/assets/_eevee.png" }, {name: "jigglypuff" , src: "/assets/_jigglypuff.png" }, {name: "mankey" , src: "/assets/_mankey.png" }, {name: "meowth" , src: "/assets/_meowth.png" }, {name: "mew" , src: "/assets/_mew.png" }, {name: "pidgey" , src: "/assets/_pidgey.png" }, {name: "pikachu" , src: "/assets/_pikachu.png" }, {name: "psyduck" , src: "/assets/_psyduck.png" }, {name: "rattata" , src: "/assets/_rattata.png" }, {name: "snorlax" , src: "/assets/_snorlax.png" }, {name: "squirtle" , src: "/assets/_squirtle.png" }, {name: "venonat" , src: "/assets/_venonat.png" }, {name: "weedle" , src: "/assets/_weedle.png" }, {name: "zubat" , src: "/assets/_zubat.png" },] %>
               <div class="mb-3">
                 <label for="validationCustomUsername" class="form-label">Avatar</label>
                 <select name="avatar" for="user-avatar" class="form-select" aria-label="Default select example">
@@ -39,7 +38,7 @@
               </div>
 
               <div class="mb-3">
-                <legend>Post Information</legend>
+                <legend><strong>Post Information</strong></legend>
                 <label for="post-image" class="form-label">Post Image</label>
                 <input type="text" class="form-control" name="image" id="post-image" value="<%= post.image %> ">
               </div>
@@ -50,7 +49,7 @@
                   placeholder="<%= post.text %> " value="<%= post.text %>" maxlength="144">
               </div>
 
-              <button type="submit" class="btn btn-primary mb-3">Update Post!</button>
+              <button type="submit" class="btn btn-primary mb-3" style="font-family: 'Press Start 2P';">Update Post!</button>
             </form>
           </div>
         </div>

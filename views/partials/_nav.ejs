@@ -1,17 +1,33 @@
-<nav class="navbar fixed-top navbar-light" style="background-color: orange">
+<nav class="navbar fixed-top navbar-light bg-light">
   <div class="d-flex justify-content-start">
     <div class="pokegram">
       <a class="navbar-brand" href="/posts">
+        <!-- <img src="/assets/_Pokeball.png" alt="_Pokeball" width="30" class="d-inline-block align-text-center ml-3"> -->
         Pokégram!
       </a>
     </div>
   </div>
   <div class="d-flex justify-content-end">
-    <a class="navbar-brand" href="/posts">
-      <img src="/assets/_Pokeball.png" width="30" height="30" class="d-inline-block align-top" alt="home icon">
+    <!-- <a class="navbar-brand" href="/posts">
+      <img src="/assets/_Pokeball.png" width="20" height="20" class="d-inline-block align-top" alt="home icon">
+      Home
     </a>
     <a class="navbar-brand" href="/posts/new">
       <img src="/assets/_Pokedex tool.png" width="30" height="30" class="d-inline-block align-top" alt="add image icon">
-    </a>
+    </a> -->
+    <form class="container-fluid justify-content-start">
+      <a class="navbar-brand" href="/posts">
+      <button class="btn btn-sm btn-outline-secondary" type="button">
+        <img src="/assets/_Pokeball.png" width="20" height="20" class="d-inline-block align-top" alt="home icon">
+        Home</button>
+      </a>
+      <a class="navbar-brand" href="/posts/new">
+        <button class="btn btn-sm btn-outline-secondary" type="button" >
+          <img src="/assets/_Pokedex tool.png" width="20" height="20" class="d-inline-block align-top" alt="home icon">
+          Add Post</button>
+        </a>
+    </form>
   </div>
 </nav>
+
+
