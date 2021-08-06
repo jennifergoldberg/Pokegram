@@ -46,7 +46,7 @@
           <% comment.forEach(comments=> { %>
             <li class="list-group-item d-flex"><strong>
                 <%= comments.username %>
-              </strong> - <%= comments.text %>
+              </strong> <span class="comment-text-space"> <%= comments.text %> </span>
                 <div class="dropdown d-flex">
                   <a class="btn btn-link dropdown-toggle-split" href="#" role="button" id="dropdownMenuLink"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -117,39 +117,36 @@
         </ul>
 
         <div class="card-body">
-
-          <!-- <div class="input-group mb-3"> -->
           <form action="/posts/addcomment/<%= post._id %>" method="POST">
             <p>Add a comment</p>
             <input type="text" class="form-control" placeholder="username" name="username" maxlength="20">
             <input type="text" class="form-control" placeholder="comment" name="text" maxlength="144">
             <button class="btn btn-outline-secondary" type="submit">Post Comment</button>
           </form>
-          <!-- </div> -->
         </div>
       </div>
-  </body>
 
-</html>
 
-<!-- Delete Modal -->
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete this post?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <form action="/posts/<%=post.id %>?_method=DELETE" method="POST">
-          <input type="submit" class="btn btn-primary" value="Delete">
-        </form>
+  <!-- Delete Post Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this post?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <form action="/posts/<%=post.id %>?_method=DELETE" method="POST">
+            <input type="submit" class="btn btn-primary" value="Delete">
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+</body>
+</html>
