@@ -10,7 +10,7 @@
 
 
       <div class="container">
-        <div class="card">
+        <div class="card" id="new-card">
           <div class="card-header" style="font-family: 'Press Start 2P';">
             'Gotta Make a New Post!
           </div>
@@ -19,7 +19,7 @@
             <form action="/posts/new" method="POST" class="needs-validation">
 
               <div class="mb-3">
-                <legend>User Information</legend>
+                <legend><strong>User Information</strong></legend>
                 <label for="validationCustomUsername" class="form-label">Username</label>
                 <div class="input-group has-validation">
                   <input type="text" class="form-control" name="username" placeholder="enter a username" maxlength="20"
@@ -30,9 +30,12 @@
                   </div>
                 </div>
                 <% const avatars=[ { name: "abra" , src: "/assets/_abra.png" }, { name: "bellsprout" ,
-                  src: "/assets/_bellsprout.png" }, { name: "eevee" , src: "/assets/_eevee.png" },] %>
+                  src: "/assets/_bellsprout.png" }, { name: "bulbasaur" ,
+                  src: "/assets/_bulbasaur.png" }, { name: "caterpie" ,
+                  src: "/assets/_caterpie.png" }, { name: "charmander" ,
+                  src: "/assets/_charmander.png" }, { name: "dratini" , src: "/assets/_dratini.png" }, { name: "eevee" , src: "/assets/_eevee.png" }, {name: "jigglypuff" , src: "/assets/_jigglypuff.png" }, {name: "mankey" , src: "/assets/_mankey.png" }, {name: "meowth" , src: "/assets/_meowth.png" }, {name: "mew" , src: "/assets/_mew.png" }, {name: "pidgey" , src: "/assets/_pidgey.png" }, {name: "pikachu" , src: "/assets/_pikachu.png" }, {name: "psyduck" , src: "/assets/_psyduck.png" }, {name: "rattata" , src: "/assets/_rattata.png" }, {name: "snorlax" , src: "/assets/_snorlax.png" }, {name: "squirtle" , src: "/assets/_squirtle.png" }, {name: "venonat" , src: "/assets/_venonat.png" }, {name: "weedle" , src: "/assets/_weedle.png" }, {name: "zubat" , src: "/assets/_zubat.png" },] %>
                   <div class="mb-3">
-                    <label for="validationCustomUsername" class="form-label">Avatar</label>
+                    <label for="validationCustomUsername" class="form-label mt-3">Avatar</label>
                     <select name="avatar" for="user-avatar" class="form-select" aria-label="Default select example">
                       <option selected>choose an avatar</option>
                       <% avatars.forEach(avatar=> { %>
@@ -44,7 +47,7 @@
                   </div>
 
                   <div class="mb-3">
-                    <legend>Post Information</legend>
+                    <legend><strong>Post Information</strong></legend>
                     <label class="form-label" for="validationCustomImage">Post Image</label>
                     <input type="text" class="form-control" name="image" placeholder="http://"
                       id="validationCustomImage" aria-describedby="inputGroupPrepend3 validationCustomImageFeedback"
@@ -64,8 +67,7 @@
                     </div>
                   </div>
 
-                  <button type="submit" class="btn btn-primary mb-1" style="font-family: 'Press Start 2P';">Post
-                    it!</button>
+                  <button type="submit" class="btn btn-primary" style="font-family: 'Press Start 2P';">Post it! <img src="/assets/_PokemonGoArrow.png" alt="Upload Icon" height="30"></button>
             </form>
           </div>
         </div>

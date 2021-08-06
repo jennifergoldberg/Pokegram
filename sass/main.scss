@@ -10,10 +10,8 @@ body {
 }
 
 nav.navbar-light .navbar-brand {
-  color: white;
   border-color: #ff1a1a;
-  border: 2px;
-  animation: pulse 2s infinite;
+  // animation: pulse 2s infinite;
 }
 
 img.d-inline-block.align-top {
@@ -55,6 +53,7 @@ img.post-avatar {
   filter: drop-shadow(0 0 0.10rem #737e8a);
 }
 
+
 #index-card-top{ 
   background-color: #202d73;
 }
@@ -78,14 +77,14 @@ svg.dark {
   vertical-align: middle;
 }
 
-@keyframes pulse {
-  0% {
-    color: #FAFAFA;
-  }
-  100% {
-    color: #001F3F;
-  }
-}
+// @keyframes pulse {
+//   0% {
+//     color: #FAFAFA;
+//   }
+//   100% {
+//     color: #001F3F;
+//   }
+// }
 
 .modal-title {
   color: black;
@@ -94,4 +93,8 @@ svg.dark {
 
 .comment-text-space {
   padding-left: 10px;
+}
+
+#new-card {
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
