@@ -117,20 +117,17 @@
         </ul>
 
         <div class="card-body">
-
-          <!-- <div class="input-group mb-3"> -->
           <form action="/posts/addcomment/<%= post._id %>" method="POST">
             <p>Add a comment</p>
             <input type="text" class="form-control" placeholder="username" name="username" maxlength="20">
             <input type="text" class="form-control" placeholder="comment" name="text" maxlength="144">
             <button class="btn btn-outline-secondary" type="submit">Post Comment</button>
           </form>
-          <!-- </div> -->
         </div>
       </div>
 
 
-  <!-- Delete Modal -->
+  <!-- Delete Post Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
