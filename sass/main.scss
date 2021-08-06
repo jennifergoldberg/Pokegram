@@ -75,4 +75,9 @@ button.likes {
 
 .modal-title {
   color: black;
+  font-family: fonts.$headerFont !important;
+}
+
+.comment-text-space {
+  padding-left: 10px;
 }
