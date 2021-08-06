@@ -48,14 +48,14 @@
             </svg>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editCommentModal" >Edit Comment</a></li>
-            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteCommentModal" href="#">Delete Comment</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editCommentModal-<%=comments.id %>">Edit Comment</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteCommentModal-<%=comments.id %>" href="#">Delete Comment</a></li>
           </ul>
         </div>
       </li>
 <!-- Delete Comments Modal -->
 
-<div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteCommentModal-<%=comments.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -78,7 +78,7 @@
 
 <!-- Edit Comments Modal -->
 
-<div class="modal fade" id="editCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editCommentModal-<%=comments.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
 
       <div class="modal-content">
@@ -86,8 +86,8 @@
           <h5 class="modal-title" id="deleteCommentModalLabel">Edit Comment</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
       <form action="/comments/<%=comments.id %>?_method=PUT" method="POST">
+        <div class="modal-body">
           <label type="text" >Username</label>
           <input  
             class="form-control" 
@@ -111,14 +111,17 @@
             data-bs-dismiss="modal"
             >Close</button>
           <input type="submit" class="btn btn-primary" value="Edit">
-      </form>
-      </div>
+        </div>
+    </form>
     </div>
   </div>
 </div>
 
+
+
   <% }); %> 
 </ul>
+
 
     <div class="card-body">
       <!-- <a href="#" class="card-link">Card link</a>
