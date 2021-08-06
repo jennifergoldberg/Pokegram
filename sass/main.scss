@@ -5,22 +5,26 @@
 
 body {
   background-color: #FAFAFA;
+  background-image: linear-gradient(#FAFAFA, #f2c335, #f2b035, #f24b59, #ff1a1a, #8684bf, #202d73);
+  background-size: 100% 100%;
+  mix-blend-mode: difference;
   font-family: fonts.$mainFont !important;
   padding-top: 70px;
 }
+
 
 nav.navbar-light .navbar-brand {
   animation: pulse 2s infinite;
   vertical-align: middle;
 }
 
-.navbar-brand img{
-  filter: drop-shadow(0 0 0.10rem #737e8a);
-}
+// .navbar-brand img{
+//   filter: drop-shadow(0 0 0.10rem #737e8a);
+// }
 
-img.d-inline-block.align-top {
-  filter: drop-shadow(0 0 0.10rem #737e8a);
-}
+// img.d-inline-block.align-top {
+//   filter: drop-shadow(0 0 0.10rem #737e8a);
+// }
 
 h5, .h5 {
   font-size: .75rem;
@@ -90,14 +94,14 @@ svg.dark {
   vertical-align: middle;
 }
 
-// @keyframes pulse {
-//   0% {
-//     color: #FAFAFA;
-//   }
-//   100% {
-//     color: #001F3F;
-//   }
-// }
+@keyframes pulse {
+  0% {
+    color: #FAFAFA;
+  }
+  100% {
+    color: #001F3F;
+  }
+}
 
 .modal-title {
   color: black;
