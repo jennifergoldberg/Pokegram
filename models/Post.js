@@ -24,9 +24,9 @@ const postSchema = new mongoose.Schema({
     max: 144,
   },
 },
-{
-  timestamps: true,
-});
+  {
+    timestamps: true,
+  });
 
 const Post = mongoose.model("Post", postSchema);
 

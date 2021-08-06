@@ -4,60 +4,52 @@
 <!-- Head Partial -->
 <%- include("partials/_head.ejs") %>
 
-<body>
-<!-- Nav Partial -->
-<%- include("partials/_nav.ejs") %> 
+  <body>
+    <!-- Nav Partial -->
+    <%- include("partials/_nav.ejs") %>
 
 
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        Edit Post!
+      <div class="container">
+        <div class="card">
+          <div class="card-header">
+            Edit Post!
+          </div>
+
+          <div class="card-body">
+            <form action="/posts/<%=post.id %>?_method=PUT" method="POST">
+              <div class="mb-3">
+                <legend>User Information</legend>
+                <label for="post-username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" id="username" value="<%= post.username %> "
+                  maxlength="20">
+              </div>
+
+              <div class="mb-3">
+                <select for="post-avatar" class="form-select" aria-label="Default select example">
+                  <option selected>choose an avatar</option>
+                  <option value="1">Abra</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <legend>Post Information</legend>
+                <label for="post-image" class="form-label">Post Image</label>
+                <input type="text" class="form-control" name="image" id="post-image" value="<%= post.image %> ">
+              </div>
+
+              <div class="mb-3">
+                <label for="post-text" class="form-label">Comment</label>
+                <input class="form-control" name="text" id="post-text" cols="30" rows="10"
+                  placeholder="<%= post.text %> " value="<%= post.text %>" maxlength="144">
+              </div>
+
+              <button type="submit" class="btn btn-primary mb-3">Update Post!</button>
+            </form>
+          </div>
+        </div>
       </div>
+  </body>
 
-      <div class="card-body">
-        <form action="/posts/<%=post.id %>?_method=PUT" method="POST">
-            <div class="mb-3">
-            <legend>User Information</legend>
-            <label for="post-username" class="form-label">Username</label>
-              <input 
-              type="text" 
-              class="form-control" 
-              name="username"
-              id="username" 
-              value="<%= post.username %> "
-              maxlength="20">
-            </div>
-
-            <div class="mb-3">
-              <select for="post-avatar" class="form-select" aria-label="Default select example">
-                <option selected>choose an avatar</option>
-                <option value="1">Abra</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-
-            <div class="mb-3">
-            <legend>Post Information</legend>
-            <label for="post-image" class="form-label">Post Image</label>
-              <input 
-              type="text" 
-              class="form-control" 
-              name="image"
-              id="post-image" 
-              value= "<%= post.image %> ">
-            </div>
-
-            <div class="mb-3">
-              <label for="post-text" class="form-label">Comment</label>
-                <input class="form-control" name="text" id="post-text" cols="30" rows="10" placeholder="<%= post.text %> " value="<%= post.text %>" maxlength="144">
-            </div>
-
-            <button type="submit" class="btn btn-primary mb-3">Update Post!</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</body>
 </html>
