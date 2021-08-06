@@ -9,23 +9,70 @@ body {
   padding-top: 70px;
 }
 
-// nav .container {
-//   display: flex;
-//   position: fixed;
-//   justify-content: flex-end;
-// }
+nav.navbar-light .navbar-brand {
+  color: white;
+  border-color: #ff1a1a;
+  border: 2px;
+  animation: pulse 2s infinite;
+}
+
+img.d-inline-block.align-top {
+  filter: drop-shadow(0 0 0.10rem #737e8a);
+}
+
+h5, .h5 {
+  font-size: .75rem;
+  padding: 10px 5px;
+  vertical-align: middle;
+  margin-top: 7px;
+  color: white;
+}
 
 .pokegram {
   margin-left: 10px;
   font-family: fonts.$headerFont !important;
 }
 
-.post-avatar {
+img.post-avatar {
   height: 30px;
   width: 30px;
+  margin: 5px 5px 10px 10px;
 }
 
 .post-likes {
   border-style: none;
   border: none;
+  filter: drop-shadow(0 0 0.10rem #737e8a);
+}
+
+#index-card-top{ 
+  background-color: #202d73;
+}
+
+section.top.d-flex.justify-content-between {
+  vertical-align: middle;
+}
+
+button.likes {
+  border-style: none;
+  background-color: #ffffff;
+}
+
+.mx-auto {
+  margin-bottom: 20px;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
+
+@keyframes pulse {
+  0% {
+    color: #FAFAFA;
+  }
+  100% {
+    color: #001F3F;
+  }
+}
+
+.modal-title {
+  color: black;
 }

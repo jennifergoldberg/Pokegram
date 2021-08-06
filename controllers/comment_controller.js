@@ -19,19 +19,29 @@ const { Comment, Post } = require("../models");
 
 // update - PUT - functional
 
-router.put("/:id/", (req, res, next) => {
-  Comment.findByIdAndUpdate( req.params.id, { $set: req.body, }, { new: true, },
-    (error, updatedComment) => {
-      if (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-      }
-      
-      return res.redirect(`/${post.id}`);
-    }
-  );
-});
+// router.put("/:id", (req, res, next) => {
+//   Comment.findByIdAndUpdate( req.params.id, { $set: req.body, }, { new: true, },
+//     (error, updatedComment) => {
+//       if (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//       }     
+//       return res.redirect("/posts");
+//     }
+//   );
+// });
+
+router.put("/:id", async (req, res, next) => {
+  try{
+    await Comment.findByIdAndUpdate(req.params.id, { $set: req.body, }, { new: true, });
+    return res.redirect("/posts")
+  } catch (error) {
+    console.log(error);
+    req.error = error;
+    return next();
+  }
+})
 
 // destroy - DELETE - functional
 
