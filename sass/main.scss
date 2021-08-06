@@ -4,20 +4,19 @@
 
 
 body {
-  background-color: #FAFAFA;
+  background-color: #f3f3f3;
   font-family: fonts.$mainFont !important;
   padding-top: 70px;
 }
 
+
 nav.navbar-light .navbar-brand {
-  color: white;
-  border-color: #ff1a1a;
-  border: 2px;
   animation: pulse 2s infinite;
+  vertical-align: middle;
 }
 
-img.d-inline-block.align-top {
-  filter: drop-shadow(0 0 0.10rem #737e8a);
+a#dropdownMenuLink.btn.btn-link.dropdown-toggle-split.d-flex {
+  justify-content: end !important;
 }
 
 h5, .h5 {
@@ -33,10 +32,20 @@ h5, .h5 {
   font-family: fonts.$headerFont !important;
 }
 
+
 img.post-avatar {
-  height: 30px;
-  width: 30px;
-  margin: 5px 5px 10px 10px;
+  height: 40px;
+  margin: 7px 5px 10px 10px;
+  filter: drop-shadow(0px 0px 5px);
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 100%;
+  background-color: "#";
+}
+
+.card-img, .card-img-top {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .post-likes {
@@ -45,13 +54,14 @@ img.post-avatar {
   filter: drop-shadow(0 0 0.10rem #737e8a);
 }
 
+
 #index-card-top{ 
   background-color: #202d73;
 }
 
-section.top.d-flex.justify-content-between {
-  vertical-align: middle;
-}
+// section.top.d-flex.justify-content-between {
+//   vertical-align: middle;
+// }
 
 button.likes {
   border-style: none;
@@ -63,6 +73,19 @@ button.likes {
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
+#show-username{
+margin-left: 10px;
+font-size: 14px;
+}
+
+#three-dot-show {
+  margin-bottom: 10px;
+}
+
+svg.dark {
+  margin: 10px 5px 0 0;
+  vertical-align: middle;
+}
 
 @keyframes pulse {
   0% {
@@ -75,4 +98,18 @@ button.likes {
 
 .modal-title {
   color: black;
+  font-family: fonts.$headerFont !important;
 }
+
+.comment-text-space {
+  padding-left: 10px;
+}
+
+#new-card {
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
+// a#dropdownMenuLink.btn.btn-link.dropdown-toggle-split {
+//   justify-content: space-between;
+// }
+

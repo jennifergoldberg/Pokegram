@@ -10,11 +10,11 @@
           event.preventDefault()
           event.stopPropagation()
         }
-      
+
         form.classList.add('was-validated')
       }, false)
     })
 })()
 
-let avatar = document.querySelectorAll(".avatar");
-console.log(avatar)
+
+
