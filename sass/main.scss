@@ -39,6 +39,11 @@ img.post-avatar {
   margin: 5px 5px 10px 10px;
 }
 
+.card-img, .card-img-top {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
 .post-likes {
   border-style: none;
   border: none;
