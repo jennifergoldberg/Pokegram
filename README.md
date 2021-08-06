@@ -292,6 +292,12 @@ https://github.com/
 https://mongoosejs.com/
 
 
+### CREATED BY
+- Jennifer Goldberg
+https://www.linkedin.com/in/jennifer-goldberg/
+https://github.com/jennifergoldberg
 
-
+- Gerald Tiamzon
+https://www.linkedin.com/in/gerald-tiamzon/
+https://github.com/gtiamzon
 
