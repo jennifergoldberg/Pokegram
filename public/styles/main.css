@@ -10754,7 +10754,12 @@ body {
 }
 
 nav.navbar-light .navbar-brand {
-  border-color: #ff1a1a;
+  animation: pulse 2s infinite;
+  vertical-align: middle;
+}
+
+.navbar-brand img {
+  filter: drop-shadow(0 0 0.1rem #737e8a);
 }
 
 img.d-inline-block.align-top {
