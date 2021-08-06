@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema({
-  username: {
+	username: {
 		type: String,
 		// required: [true, "Your Poképost must have a username"],
 		// max: 20,
@@ -10,19 +10,19 @@ const commentSchema = new mongoose.Schema({
 		type: String,
 		// required: [true, "Your Poképost must have text"],
 		// max: 144,
-  },
+	},
 	post: {
-    type: mongoose.Types.ObjectId,
-    ref: "Post",
-  },
+		type: mongoose.Types.ObjectId,
+		ref: "Post",
+	},
 	likes: {
-    type: Boolean,
-    default: false,
-  },
+		type: Boolean,
+		default: false,
+	},
 },
-{
-  timestamps: true,
-});
+	{
+		timestamps: true,
+	});
 
 const Comment = mongoose.model("Comment", commentSchema);
 
