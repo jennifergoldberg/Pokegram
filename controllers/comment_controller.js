@@ -34,8 +34,9 @@ const { Comment, Post } = require("../models");
 
 router.put("/:id", async (req, res, next) => {
   try{
-    await Comment.findByIdAndUpdate(req.params.id, { $set: req.body, }, { new: true, });
-    return res.redirect("/posts")
+    const updatedComment = await Comment.findByIdAndUpdate(req.params.id, { $set: req.body, }, { new: true, });
+    console.log(updatedComment);
+    return res.redirect(`/posts/${updatedComment.post}`);
   } catch (error) {
     console.log(error);
     req.error = error;
@@ -47,8 +48,8 @@ router.put("/:id", async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
   try {
-    await Comment.findByIdAndDelete(req.params.id);
-    return res.redirect("/posts")
+    const deletedComment = await Comment.findByIdAndDelete(req.params.id);
+    return res.redirect(`/posts/${deletedComment.post}`)
   } catch (error) {
     console.log(error);
     req.error = error;
