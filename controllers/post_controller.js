@@ -27,10 +27,6 @@ router.get('/new', (req, res) => {
 
 // create - functional - POST
 router.post('/new', async (req, res) => {
-  // console.log(req.body);
-  // const body = {
-  //   { username: req.body.username}
-  // }
   try {
     const createdPost = await Post.create(req.body);
     return res.redirect("/")
@@ -95,10 +91,9 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+// create comment - functional - post
 router.post("/addcomment/:id", async (req, res) => {
   try {
-    // const foundPost = await Post.findById(req.params.id);
-    // console.log("foundPost", foundPost);
     req.body.post = req.params.id;
     const createdComment = await Comment.create(req.body);
     console.log("createdComment", createdComment);
