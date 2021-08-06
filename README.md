@@ -261,6 +261,10 @@ Bootstrap- https://getbootstrap.com/
 - First time using Bootstrap and SASS is definitely a challenge. Initally a challenge to implement but worth the effort to understand Bootstrap.
 - Mongodb Atlas integration for both users to utilize.
 - Heroku Deployment issues for missing mongoose requirements (mistake on our end).
+- The three dots on the comment for the edit and delete WILL NOT MOVE. 
+- Getting Bootstrap to do things to make it not look too much like Bootstrap.
+- Alot of our issues we over thought, when we there were much simpler ways to tackle things. 
+- Undertsanding how to call files from what folders is still not super clear. But this project helped us understand it alot better. 
 
 ### SOURCES
 
@@ -290,6 +294,9 @@ https://github.com/
 
 - MONGOOSE
 https://mongoosejs.com/
+
+- GOOGLE
+https://www.google.com/
 
 
 ### CREATED BY
