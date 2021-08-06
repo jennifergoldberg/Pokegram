@@ -33,10 +33,15 @@ h5, .h5 {
   font-family: fonts.$headerFont !important;
 }
 
+
 img.post-avatar {
-  height: 30px;
-  width: 30px;
-  margin: 5px 5px 10px 10px;
+  height: 40px;
+  margin: 7px 5px 10px 10px;
+  filter: drop-shadow(0px 0px 5px);
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 100%;
+  background-color: "#";
 }
 
 .card-img, .card-img-top {
@@ -68,6 +73,10 @@ button.likes {
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
 }
 
+svg.dark {
+  margin: 10px 5px 0 0;
+  vertical-align: middle;
+}
 
 @keyframes pulse {
   0% {
