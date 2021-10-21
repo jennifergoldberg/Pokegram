@@ -1,5 +1,5 @@
 ### Project Zero - Pokegram
-A Pokemon inspired photo share app
+A Pokemon inspired photo share app!
 Our objective is to reverse engineer a similar web app to Instagram, called Pokégram. We, the developers, both regularly use Instagram and enjoy the user experience. Our version will be a Pokémon themed web app with features similar to Instagram. We decided to focus on 3 key features from Instagram:
 - Create, edit and delete Posts 
 - Like Posts
